@@ -1,33 +1,30 @@
- // PROGRESSBAR EXAMPLE
-    function changeValue(e) {
-      let elm = document.getElementById("bar1");
-      elm.setAttribute("value", e);
-      elm.style.width = e + "%";
-      return false;
-    }
-    // TABS
-    document.querySelectorAll("button").forEach((btn) => {
-      if (typeof btn.getAttribute("data-ctab") != "undefined")
-        btn.addEventListener("click", function(e) {
-          let elm = document.getElementById(e.target.getAttribute("data-ctab"));
-          elm.style.display = elm.style.display == "none" ? "block" : "none";
-          /*
-           @INFORMATION
-           I'm working on a way to temporarily change the inner HTML of our button. 
-           When the button to hide the tab content is pressed again, we restore it 
-           to its original innerHTML.
-       
-           const newspan = document.createElement("span");
-           const spanid = document.getElementById("preinfo");
-           newspan.setAttribute("id", "preinfo");
-           newspan.setAttribute("style", "color:transparent;");
-           if (elm.contains(spanid)) elm.removeChild(spanid);
-           elm.appendChild(newspan);
-           newspan.innerHTML = e.target.innerHTML;     
-           */
-        });
+// PROGRESSBAR EXAMPLE
+function changeValue(e) {
+  const elm = document.getElementById("bar1");
+  elm.setAttribute("value", e);
+  elm.style.width = `${e}%`;
+  return false;
+}
+
+// TABS
+document.querySelectorAll("button[data-ctab]").forEach((elm) => {
+  elm.addEventListener("click", (e) => {
+    const dest = document.getElementById(e.target.getAttribute("data-ctab"));
+    const c = document.createElement("button");
+    c.setAttribute("id", "exit1");
+    c.setAttribute("class", "btn dark");
+    c.innerHTML = "Return";
+    dest.appendChild(c);
+    dest.style.display = "block";
+    elm.style.display = "none";
+    document.getElementById("exit1").addEventListener("click", (e) => {
+      dest.removeChild(c);
+      dest.style.display = "none";
+      elm.style.display = "block";
     });
-    
+  });
+});
+
 /*
 SOME OTHER FUN STUFF HAHA
 function xorstr(e, n) {
