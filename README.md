@@ -1,7 +1,7 @@
 # EmpusaUI
 
 
-# features
+# ChangeLog
 ```
   Update v0.0.2 Whats new ?
    - Containers
