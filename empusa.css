@@ -1,4 +1,6 @@
 body {
+  --btn-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   --dark: #2f3640;
   --error: #ff4d4d;
   --g-radius: 6px;
@@ -6,20 +8,15 @@ body {
   --light: #f5f6fa;
   --success: #0be881;
   --warning: #ff9f1a;
-
-  --btn-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
-
 body[data-theme="dark"] {
   background: #000;
   color: #fff;
 }
-
 body[data-theme="light"] {
   background: #fff;
   color: #000;
 }
-
 .progress {
   background-color: #e9ecef;
   border-radius: 0.25rem;
@@ -28,26 +25,26 @@ body[data-theme="light"] {
   height: 1rem;
   overflow: hidden;
 }
-
 .s-lg {
   padding: 0.5rem 0.75rem !important;
   width: 20%;
 }
-
 .w-75 {
   width: 75% !important;
 }
-
 .w-25 {
   width: 25% !important;
 }
-
 .container {
   margin-left: auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-right: auto;
   padding: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
 }
-
 .progress-bar {
   background-color: #0d6efd;
   color: #fff;
@@ -57,7 +54,6 @@ body[data-theme="light"] {
   transition: width 0.6s ease;
   white-space: nowrap;
 }
-
 .btn {
   border: 1px solid transparent;
   border-radius: var(--g-radius);
@@ -68,175 +64,92 @@ body[data-theme="light"] {
   margin: 0.25rem 0.125rem;
   padding: 0.375rem 0.75rem;
 }
-
 .btn.info {
   background: var(--info);
   border: 1px solid var(--info);
   color: #fff;
 }
-
 .btn.dark {
   background: var(--dark);
   border: 1px solid var(--dark);
   color: #fff;
 }
-
 .btn.light {
   background: var(--light);
   border: 1px solid var(--light);
   color: #000;
 }
-
 .btn.error {
   background: var(--error);
   border: 1px solid var(--error);
   color: #fff;
 }
-
 .btn.success {
   background: var(--success);
   border: 1px solid var(--success);
   color: #fff;
 }
-
 .btn.warning {
   background: var(--warning);
   border: 1px solid var(--warning);
   color: #fff;
 }
-
 .tabcont {
   display: none;
 }
-
-/* Container for the main content */
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Container that spans the entire width of the viewport */
 .container-fluid {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
   margin-left: auto;
-}
-
-/* Horizontal row of columns */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
-/* Column within a row */
-.col {
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
+  margin-right: auto;
   padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
 }
-
-/* Columns for different screen sizes */
-@media (min-width: 576px) {
-  .col-sm {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
-}
-@media (min-width: 768px) {
-  .col-md {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
-}
-@media (min-width: 992px) {
-  .col-lg {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
-}
-@media (min-width: 1200px) {
-  .col-xl {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
-}
-
 .navbar {
-  position: relative;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  position: relative;
 }
-
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
+  margin-right: 1rem;
+  padding-bottom: 0.3125rem;
+  padding-top: 0.3125rem;
   white-space: nowrap;
 }
-
 .navbar-nav {
   display: flex;
   flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
   list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
 }
-
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
 }
-
 .nav-link:hover,
 .nav-link:focus {
   text-decoration: none;
 }
-
 .nav-link.disabled {
   color: #6c757d;
   pointer-events: none;
 }
-
 .navbar-toggler {
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0.25rem 0.75rem;
 }
-
 .navbar-collapse {
+  align-items: center;
   flex-basis: 100%;
   flex-grow: 1;
-  align-items: center;
 }
-
-.navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  content: "";
-  background: no-repeat center center;
-  background-size: 100% 100%;
-}
-
