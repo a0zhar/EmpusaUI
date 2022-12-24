@@ -6,6 +6,7 @@
 - Tabs system (responsive)
 - Buttons (both small and large)
 - Progressbar (responsive)
+- Container (including fluid)
 
 # todo
 
