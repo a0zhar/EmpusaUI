@@ -7,6 +7,7 @@
 - Buttons (both small and large)
 - Progressbar (responsive)
 - Container (including fluid)
+- navbar
 
 # todo
 
